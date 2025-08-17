@@ -1,0 +1,16 @@
+class Solution(object):
+    def maximum69Number(self, num):
+        digits = [int(d) for d in str(num)]
+        results = []
+        
+        
+        for i in range(len(digits)):
+            number = digits[:]  
+            if number[i] == 6:
+                number[i] = 9
+            else:
+                number[i] = 6
+            results.append(int("".join(map(str, number))))
+        
+        
+        return max([num] + results)
