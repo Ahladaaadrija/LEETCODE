@@ -1,0 +1,19 @@
+class Solution(object):
+    def findDifference(self, nums1, nums2):
+        ans1=[]
+        ans2=[]
+        for i in range(len(nums1)):
+            if nums1[i] in nums2:
+                pass
+            elif nums1[i] not in ans1:
+                ans1.append(nums1[i])
+        for i in range(len(nums2)):
+            if nums2[i] in nums1:
+                pass
+            elif nums2[i] not in ans2:
+                ans2.append(nums2[i])
+        answer = []
+        answer.append(ans1)
+        answer.append(ans2)
+        return answer
+        
