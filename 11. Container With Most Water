@@ -1,0 +1,21 @@
+class Solution(object):
+    def maxArea(self, height):
+        capacity = 0
+        i = 0
+        j = len(height)-1
+        out = 0
+        while i != j:
+            if height[i]<height[j]:
+                out = (j-i)*height[i]
+                capacity = max(capacity,out)
+                i += 1
+            elif height[i]>height[j]:
+                out = (j-i)*height[j]
+                capacity = max(capacity,out)
+                j -= 1
+            else:
+                out = (j-i)*height[i]
+                capacity = max(capacity,out)
+                i += 1
+        return capacity
+
