@@ -1,0 +1,14 @@
+class Solution(object):
+    def isAnagram(self, s, t):
+        p = []
+        if len(s) != len(t):
+            return False
+        else:
+            for i in s:
+                if i not in p:
+                    if i not in t:
+                        return False
+                    if s.count(i) != t.count(i):
+                        return False
+                    p.append(i)
+        return True
