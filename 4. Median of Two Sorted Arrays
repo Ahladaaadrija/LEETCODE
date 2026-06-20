@@ -1,0 +1,19 @@
+class Solution(object):
+    def findMedianSortedArrays(self, nums1, nums2):
+        nums = nums1 + nums2
+        nums.sort()
+        n = len(nums)
+        i = 0
+        j = 0
+        out = float('inf')
+        if n == 1:
+            out = nums[0]
+        elif n % 2 == 0:
+            i = n/2 - 1
+            j = i+1
+            k = nums[i] + nums[j]
+            out = k / 2.0
+        else:
+            i = (n+1) / 2 - 1
+            out = nums[i]
+        return out
