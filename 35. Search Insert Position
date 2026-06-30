@@ -1,0 +1,18 @@
+class Solution:
+    def searchInsert(self, nums: List[int], target: int) -> int:
+        k = target
+        n = len(nums)
+        if k in nums:
+            return nums.index(k)
+        else:
+            nums.append(k)
+            nums.sort()
+            return nums.index(k)
+
+        
+        
+
+        
+            
+        
+        
