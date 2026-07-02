@@ -1,0 +1,15 @@
+class Solution:
+    def topKFrequent(self, words: List[str], k: int) -> List[str]:
+        count = {}
+        words.sort()
+        for i in words:
+            if i not in count:
+                c = words.count(i)
+                count[i] = c
+        p = dict(sorted(count.items(), key = lambda x: x[1] , reverse = True))
+        j = []
+        keys = list(p.keys())
+        for i in range(k):
+            j.append(keys[i])
+        return j
+    
