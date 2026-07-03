@@ -3,3 +3,22 @@ class Solution(object):
         num = int("".join(map(str, digits))) 
         num += 1                              
         return list(map(int, str(num)))       
+METHOD 2
+----------------
+class Solution:
+    def plusOne(self, digits: List[int]) -> List[int]:
+        nums = ""
+        for i in digits:
+            nums = nums + str(i)
+        new = int(nums)
+        new = new + 1
+        new = str(new)
+        j = []
+        for i in new:
+            j.append(int(i))
+        return j
+
+
+
+
+        
