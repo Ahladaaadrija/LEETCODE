@@ -1,0 +1,21 @@
+class Solution:
+    def findComplement(self, num: int) -> int:
+        p = []
+        i = num
+        while i != 0:
+            j = i % 2
+            p.append(j)
+            i = i//2
+        p.reverse()
+        n = len(p)
+        for i in range(n):
+            if p[i] == 0:
+                p[i] = 1
+            else:
+                p[i] = 0
+        p.reverse()
+        m = 0
+        for i in range(n):
+            j = p[i] * (2 ** i)
+            m+=j
+        return m
