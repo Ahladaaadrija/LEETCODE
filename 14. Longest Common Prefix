@@ -1,0 +1,36 @@
+class Solution:
+    def longestCommonPrefix(self, strs: List[str]) -> str:        
+        s = []
+        n = 999
+        m = len(strs)
+        
+        for i in strs:
+            l = len(i)
+            n = min(n,l)
+         
+        for j in strs:
+            if len(j) == n:
+                f = list(j)
+                break
+        for i in range(n):
+            k_i = []
+
+            for item in strs:
+                k_i.append(item[i])
+
+            if k_i.count(f[i]) == m:
+                s.append(f[i])
+            else:
+                return "".join(s)
+
+        return "".join(s)
+
+        
+            
+            
+            
+            
+
+            
+
+        
