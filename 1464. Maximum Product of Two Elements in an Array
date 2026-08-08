@@ -1,0 +1,10 @@
+class Solution:
+    def maxProduct(self, nums: List[int]) -> int:
+        nums.sort()
+        k = nums[-1]
+        j = nums[-2]
+        k = k-1
+        j = j-1
+        out = k*j
+        return out
+        
