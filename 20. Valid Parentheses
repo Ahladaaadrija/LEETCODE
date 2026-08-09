@@ -1,0 +1,35 @@
+class Solution:
+    def isValid(self, s: str) -> bool:
+        news = list(s)
+        out = []
+        left = ["(","{","["]
+        for i in news:
+            if len(out) == 0:
+                out.append(i)
+            elif i in left:
+                out.append(i)
+            elif i == ")":
+                if out[-1] == "(":
+                    out.pop()
+                else:
+                    return False
+            elif i == "}":
+                if out[-1] == "{":
+                    out.pop()
+                else:
+                    return False
+            elif i == "]":
+                if out[-1] == "[":
+                    out.pop()
+                else:
+                    return False
+        if len(out) == 0:
+            return True
+        else:
+            return False
+                    
+
+
+                
+                
+
