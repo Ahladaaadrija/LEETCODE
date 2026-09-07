@@ -1,0 +1,19 @@
+class Solution:
+    def merge(self, intervals: List[List[int]]) -> List[List[int]]:
+        intervals.sort()
+        i = 0
+        p = []
+        while i < len(intervals)-1:
+            first = intervals[i]
+            second = intervals[i + 1]
+            if first[1] >= second[0]:
+                a = first[0]
+                b = max(first[1],second[1])
+                intervals[i+1] = [a,b]
+                intervals.remove(intervals[i])
+            else:
+                i+=1
+        return intervals 
+            
+            
+            
