@@ -1,0 +1,19 @@
+class Solution:
+    def convertToTitle(self, columnNumber: int) -> str:
+        letter = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
+
+        p = []
+        n = columnNumber
+
+        while n > 0:
+            n = n-1
+            new = n  % 26
+            temp = letter[new]
+            p.append(temp)
+            n = n//26
+        p.reverse()
+        o = "".join(p)
+        return o
+
+
+
