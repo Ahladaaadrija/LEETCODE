@@ -1,0 +1,11 @@
+class Solution:
+    def reverseBits(self, n: int) -> int:
+        k = int(bin(n)[2:])
+        new = 0
+        k_rev = str(k)[::-1]
+        while len(k_rev) < 32:
+            k_rev = k_rev + '0'
+
+        for i in str(k_rev):
+            new = new*2+int(i)
+        return new
