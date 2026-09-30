@@ -1,0 +1,16 @@
+class Solution:
+    def isHappy(self, n: int) -> bool:
+        temp = n
+        t = 0
+        while t != 10:
+            k = str(temp)
+            temp = 0
+            for i in k:
+                temp = temp + (int(i)*int(i))
+
+            if temp == 1:
+                return True
+            t += 1
+
+        return False   
+        
