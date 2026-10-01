@@ -1,0 +1,22 @@
+class Solution:
+    def containsNearbyDuplicate(self, nums: list[int], k: int) -> bool:
+        n = len(nums)
+        p = {}
+        index = 0
+        for i in nums:
+            if i not in p:
+                p[i] = index
+            elif i in p:
+                temp1 = p[i]
+                p[i] = index
+                temp2 = p[i]
+                if abs(temp1 - temp2) <= k:
+                    return True
+            index += 1
+        return False
+
+
+                 
+        
+
+
