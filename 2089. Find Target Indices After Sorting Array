@@ -1,0 +1,10 @@
+class Solution:
+    def targetIndices(self, nums: list[int], target: int) -> list[int]:
+        nums.sort()
+        n = len(nums)
+        p = []
+        for i in range(n):
+            if nums[i] == target:
+                p.append(i)
+        return p
+        
