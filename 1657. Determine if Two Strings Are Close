@@ -1,0 +1,27 @@
+class Solution:
+    def closeStrings(self, word1: str, word2: str) -> bool:
+        n1 = len(word1)
+        n2 = len(word2)
+        d1 = []
+        d2 = []
+        if n1 != n2:
+            return False
+        else:
+            w1 = set(word1)
+            w2 = set(word2)
+            for i in w1:
+                if i not in word2:
+                    return False
+                temp = word1.count(i)
+                d1.append(temp)
+
+            for j in w2:
+                temp = word2.count(j)
+                d2.append(temp)
+            
+            d1.sort()
+            d2.sort()
+            if d1 != d2:
+                return False
+            return True
+        
