@@ -1,0 +1,22 @@
+class Solution:
+    def checkInclusion(self, s1: str, s2: str) -> bool:
+        s1 = list(s1)
+        
+        k = len(s1)
+        kk = len(s2)
+
+        if k > len(s2):
+            return False
+
+        s1.sort()
+
+        for i in range(kk):
+            p = list(s2[i:i+k])
+            p.sort()
+            if p == s1:
+                return True
+        
+        return False
+                
+
+        
