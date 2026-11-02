@@ -1,0 +1,18 @@
+class Solution:
+    def minMoves2(self, nums: list[int]) -> int:
+        first = min(nums)
+        second = max(nums)
+        nums.sort()
+        n = len(nums)
+        if n % 2 == 0:
+            k = n//2
+            mid = (nums[k-1] + nums[k]) // 2
+        else:
+            k = (n+1)//2 - 1
+            mid = nums[k]
+
+        s = 0
+        for i in nums:
+            s += abs(mid-i)
+        return s
+        
