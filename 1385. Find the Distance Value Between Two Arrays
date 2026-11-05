@@ -1,0 +1,11 @@
+class Solution:
+    def findTheDistanceValue(self, arr1: list[int], arr2: list[int], d: int) -> int:
+        p = []
+        for i in arr1:
+            for j in arr2:
+                if abs(i-j) <= d:
+                    p.append(i)
+                    break
+        
+        n = len(arr1) - len(p)
+        return n
